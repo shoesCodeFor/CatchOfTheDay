@@ -11,7 +11,11 @@ body {
     text-indent: 300px;
     text-shadow: 2px 2px grey;
 } 
-
+a {
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+}
 #logo > h1:nth-child(1) {
     margin-top: 50px;
 }
