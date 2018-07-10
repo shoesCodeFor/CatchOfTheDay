@@ -7,8 +7,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- Linking CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/page2.css">
-	<!-- Linking Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab|Yellowtail' rel='stylesheet' type='text/css'>
+  <!-- Linking Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab|Yellowtail' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
 </head>
 <body>
 
@@ -30,16 +32,18 @@
 					<p>
                         nutritional value
                     </p> -->
-                    <div>
-                        <img src="http://www.hermanhissjewelers.com/wp-content/uploads/2018/03/cumberland-lake-map-and-container-example-working-cumberland-lake-map-really-anything-cumberland-lake-map-of-cumberland-lake-map.jpg" alt="hippofish" height="452px" width="500px">
+                <div>
+                    <div id="map" style="position: relative; width: 100%; height: 500px;"></div>
+                        <!-- <img src="http://www.hermanhissjewelers.com/wp-content/uploads/2018/03/cumberland-lake-map-and-container-example-working-cumberland-lake-map-really-anything-cumberland-lake-map-of-cumberland-lake-map.jpg" alt="hippofish" height="452px" width="500px"> -->
                     
-				</div>
+				        </div>
 			</div>
 		</div>
 
 		<div class="col-sm-6">
 			<div class="well text-center">
 				<div>
+            
 					<img class="img-responsive" src="http://i.imgur.com/5ULzX8y.jpg">
 				</div>
 			</div>
@@ -87,5 +91,40 @@
 
 </div>
 </div>
+<footer>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <script src="assets/javascript/fetchFishData.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        L.mapquest.key = 'VXLcMs4sGBfYpLAckWsEQtYsqbvfWcGA';
+
+        map = L.mapquest.map('map', {
+          center: [41.678124, -72.661492],
+          layers: L.mapquest.tileLayer('map'),
+          zoom: 12
+        });
+        map.on('zoom', function(e){
+            console.log('Zoom changed');
+            console.log(e);
+            let bounds = map.getBounds();
+            console.log(bounds);
+            let topRight = [bounds._northEast.lat, bounds._northEast.lng];
+            let bottomLeft = [bounds._southWest.lat, bounds._southWest.lng]
+            console.log(topRight);
+            console.log(bottomLeft);
+            findFishBB(topRight, bottomLeft);
+
+        });
+        map.addControl(L.mapquest.control());
+      }
+      function makeMarker(response){
+
+      }
+    </script>
+</footer>
 </body>
 </html>
