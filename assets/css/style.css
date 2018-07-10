@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 h1 {
     text-align: center;
@@ -9,6 +10,39 @@ body {
 }
 
 ul {
+=======
+/* #logo {
+    background: url("../images/lake.jpeg");
+    width: 200px;
+    text-align: center;
+    background-size: 400px;
+    background-position: center;
+    font-family: 'Rubik', sans-serif;
+    border: white solid 3px;
+    
+}
+
+body {
+    background: lightcyan;
+}
+h1 {
+    line-height: 1;
+    mix-blend-mode: hard-light;
+    color: white;
+    font-size: px;
+} */
+
+h1 {
+    text-align: center;
+    color: red;
+ }
+ 
+ body {
+    font-size: 28px;
+ }
+ 
+ ul {
+>>>>>>> 0d18ae50f708d01c0b990376dc76c4322f83606b
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -17,6 +51,7 @@ ul {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+<<<<<<< HEAD
 }
 
 li {
@@ -24,11 +59,21 @@ li {
 }
 
 li a {
+=======
+ }
+ 
+ li {
+    float: left;
+ }
+ 
+ li a {
+>>>>>>> 0d18ae50f708d01c0b990376dc76c4322f83606b
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+<<<<<<< HEAD
 }
 
 li a:hover {
@@ -50,3 +95,26 @@ input[type=text]:focus {
     width: 80%;
     margin: 0 auto;
 }
+=======
+ }
+ 
+ li a:hover {
+    background-color: #111;
+ }
+ 
+ .active {
+    background-color: rgb(76, 119, 175);
+ }
+ 
+ input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+ }
+ 
+ /* When the input field gets focus, change its width to 100% */
+ input[type=text]:focus {
+    width: 80%;
+    margin: 0 auto;
+ }
+>>>>>>> 0d18ae50f708d01c0b990376dc76c4322f83606b
