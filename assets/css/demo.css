@@ -1,0 +1,53 @@
+body {
+    background: #428bca;
+}
+#logo > h1 {
+    font-family: 'Fjalla One', sans-serif;
+    line-height: 1;
+    color: white;
+    font-size: 80px;
+    text-align: right;
+    direction:rtl;
+    text-indent: 300px;
+    text-shadow: 2px 2px grey;
+} 
+
+#logo > h1:nth-child(1) {
+    margin-top: 50px;
+}
+
+#logo > h1:nth-child(2) {
+    direction:rtl;
+    text-indent: 250px;
+
+}
+
+#logo > h1:nth-child(3) {
+    direction:rtl;
+    text-indent:200px;
+    margin-bottom: 20px;
+}
+#logo {
+    background: url(../images/lake.jpeg);
+    height: 400px;
+    width: 850px;
+    background-position: center;
+    border: white solid 3px;
+    margin-top: 10%;
+}
+
+#search {
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    display: inline-block;
+
+    
+    /* margin-top: 20px;  */
+}
+
+#addSearch {
+
+}
