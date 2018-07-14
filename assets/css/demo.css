@@ -25,38 +25,56 @@ LOGO
     margin: 0 auto;
     background-position: center;
     border: white solid 3px;
-    margin-top: 8%;
+    margin-top: 7%;
     -webkit-animation: zoom-in-out 2s ease-in 0s 1 normal ;
     animation: zoom-in-out 2s ease-in 0s 1 normal ;
 }
 
 #logo > h1 {
     font-family: 'Fjalla One', sans-serif;
-    line-height: 1;
+    margin: 45px 0;
+    line-height: .8;
     color: white;
     font-size: 80px;
     text-align: right;
     direction:rtl;
-    text-indent: 300px;
     text-shadow: 2px 2px grey;
-
+    text-indent: 280px;
 } 
 
-#logo > h1:nth-child(1) {
-    margin-top: 50px;
-
-}
-
-#logo > h1:nth-child(2) {
-    direction:rtl;
-    text-indent: 250px;
-   
-}
-
 #logo > h1:nth-child(3) {
-    direction:rtl;
-    text-indent:200px;
-    margin-bottom: 20px;
+    direction: rtl;
+    text-indent: 230px;
+}
+
+#logo > h1:nth-child(4) {
+    text-indent: 180px;
+}
+
+/****************************** 
+NAV
+******************************/
+
+nav {
+    position: relative;
+    /* border-top: white solid 3px;
+    border-left: white solid 3px;
+    border-right: white solid 3px; */
+    margin-left: -18px; 
+    margin-top: -3px;
+    overflow: auto;
+    height: 25px; 
+}
+li{
+    display: inline;
+    font-size: 15px;
+}
+
+li > a{
+    color:428bca;
+    background: white;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 
 /****************************** 
@@ -74,9 +92,9 @@ SEARCH
     /* margin-top: 20px;  */
 }
 
-#addSearch {
+/* #addSearch {
 
-}
+} */
 
 
 /****************************** 
@@ -124,10 +142,6 @@ ANIMATIONS
         opacity: 1;
         transform: translateX(0%);
     }
-
-    /* animation: bubble 1.0s forwards;
-    -webkit-animation: bubble 1.0s forwards; */
-
 }
 
 @-webkit-keyframes slideLeft {
@@ -147,10 +161,6 @@ ANIMATIONS
       -webkit-transform: scale(.8);
       transform: scale(.8);
     }
-    /* 67%{
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
-    } */
     100%{
       -webkit-transform: scale(1);
       transform: scale(1);
@@ -162,10 +172,6 @@ ANIMATIONS
       -ms-transform: scale(.8);
       transform: scale(.8);
     }
-    /* 67%{
-      -ms-transform: scale(1.2);
-      transform: scale(1.2);
-    } */
     100%{
       -ms-transform: scale(1);
       transform: scale(1);
