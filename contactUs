@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="CatchOfTheDay/assets/css/contactus.css"> 
+<style>
+</style>
+  </head>
+  <body>
+  
+  <div class="header">
+    <h2></h2>
+    <p></p>
+  </div>
+
+  <div id="navbar">
+    <a class="active" href="CatchOfTheDay/index.html">Home</a>
+    <a href="CatchOfTheDay/">About</a>
+  </div>
+  
+  <div class="content">
+    <h3></h3>
+    <p></p>
+  </div>
+  
+  <script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
+
+</body>
+</html>
