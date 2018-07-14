@@ -1,6 +1,35 @@
+/****************************** 
+GENERAL
+******************************/
 body {
-    background: #428bca;
+    background: url(../images/ocean.jpg), #428bca;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 180%;
+    background-blend-mode: multiply;
 }
+
+a {
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/****************************** 
+LOGO
+******************************/
+#logo {
+    background: url(../images/lake.jpeg);
+    height: 500px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-position: center;
+    border: white solid 3px;
+    margin-top: 8%;
+    -webkit-animation: zoom-in-out 2s ease-in 0s 1 normal ;
+    animation: zoom-in-out 2s ease-in 0s 1 normal ;
+}
+
 #logo > h1 {
     font-family: 'Fjalla One', sans-serif;
     line-height: 1;
@@ -10,20 +39,18 @@ body {
     direction:rtl;
     text-indent: 300px;
     text-shadow: 2px 2px grey;
+
 } 
-a {
-    background: white;
-    padding: 8px;
-    border-radius: 5px;
-}
+
 #logo > h1:nth-child(1) {
     margin-top: 50px;
+
 }
 
 #logo > h1:nth-child(2) {
     direction:rtl;
     text-indent: 250px;
-
+   
 }
 
 #logo > h1:nth-child(3) {
@@ -31,15 +58,10 @@ a {
     text-indent:200px;
     margin-bottom: 20px;
 }
-#logo {
-    background: url(../images/lake.jpeg);
-    height: 400px;
-    width: 850px;
-    background-position: center;
-    border: white solid 3px;
-    margin-top: 10%;
-}
 
+/****************************** 
+SEARCH
+******************************/
 #search {
     text-align: center;
 }
@@ -55,3 +77,97 @@ a {
 #addSearch {
 
 }
+
+
+/****************************** 
+ANIMATIONS
+******************************/
+.fadeIn{    
+    animation-name:fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
+    animation-timing-function: ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+.slideLeft{
+	animation-name: slideLeft;
+	-webkit-animation-name: slideLeft;	
+
+	animation-duration: 1.5s;	
+    -webkit-animation-duration: 1.5s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+ 
+    opacity: 0;
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    /* animation: bubble 1.0s forwards;
+    -webkit-animation: bubble 1.0s forwards; */
+
+}
+
+@-webkit-keyframes slideLeft {
+    from {
+        opacity: 0;
+		-webkit-transform: translateX(100%);
+	}
+	
+	to {
+        opacity: 1;
+		-webkit-transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes zoom-in-out {
+    0%{
+      -webkit-transform: scale(.8);
+      transform: scale(.8);
+    }
+    /* 67%{
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    } */
+    100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes zoom-in-out {
+    0%{
+      -ms-transform: scale(.8);
+      transform: scale(.8);
+    }
+    /* 67%{
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+    } */
+    100%{
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  }
