@@ -1,0 +1,41 @@
+@font-face{
+    font-family: wendyWoo;
+    src: url(fonts/WendyOne-Regular.ttf);
+}
+*{
+    font-family: wendyWoo;
+    font-size: 20px;
+}
+body{
+    background-color: #b0b4a3;
+
+}
+.custo-nav{
+    background: rgba(101,104,108, 1);
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    letter-spacing: .1em;
+    color: rgba(190, 190, 255, 1) !important;
+    text-shadow: -1px 1px 2px #fff,
+                    1px 1px 2px #fff,
+                    1px -1px 0 #fff,
+                    -1px -1px 0 #fff;
+}
+.table-condensed{
+    text-align: center !important;
+}
+
+.fa-2x{
+    font-size: 1.8rem !important;
+}
+.component{
+    background: rgba(101,104,128, .55);
+    background-image: url("../images/cream-paper.png");
+    background-repeat: repeat;
+    margin-top: 25px;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
