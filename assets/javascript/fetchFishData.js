@@ -22,7 +22,10 @@ function getData(URL){
             APIData.forEach(element => {
                 console.log(element);
                 L.marker([element.latitude, element.longitude])
-                    .bindPopup('<div><a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'+ element.may_catch +'</h4><h4>'+ element.mc2 +'</h4><button class="btn btn-success">Get Directions</button></div>'
+                    .bindPopup('<div><a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'
+                        + element.may_catch +'</h4><h4>'+ element.mc2 +'</h4>' +
+                        '<button class="btn btn-success" onclick="getDirections(\'' +
+                        element.latitude.toString() +',' + element.longitude.toString() + '\')">Get Directions</button></div>'
                 ).addTo(fishingSpots);
                 let spot;
                 fishGroup.push(element.may_catch);
@@ -52,6 +55,11 @@ function findFishBB(topRight, bottomLeft){
 function findFishByName(typeOfFish){
     let baseURL;
     
+}
+
+function getDirections(address){
+    console.log(address);
+    // L.mapquest.directions();
 }
 
 // Tests
