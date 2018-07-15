@@ -4,7 +4,7 @@
 // var fetch = require("node-fetch"); // NODE Only
 var sampleAPICall = 'https://data.ct.gov/resource/mty4-w9bf.json?$query=Select%20*%20WHERE%20latitude%20%3E%2041AND%20longitude%3C74';
 var fishData;
-
+var fishGroup = [];
 var fishingSpots = L.featureGroup();
                 
 
@@ -24,7 +24,9 @@ function getData(URL){
                     .bindPopup('<a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'+ element.may_catch +'</h4><h4>'+ element.mc2 +'</h4>'
                 ).addTo(fishingSpots);
                 let spot;
+                fishGroup.push(element.may_catch);
             });
+            console.log(fishGroup);
             fishingSpots.addTo(map);
         });
         
