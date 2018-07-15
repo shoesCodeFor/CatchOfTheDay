@@ -57,9 +57,6 @@ NAV
 
 nav {
     position: relative;
-    /* border-top: white solid 3px;
-    border-left: white solid 3px;
-    border-right: white solid 3px; */
     margin-left: -18px; 
     margin-top: -3px;
     overflow: auto;
@@ -87,15 +84,7 @@ SEARCH
 #searchInput {
     width: 80%;
     display: inline-block;
-
-    
-    /* margin-top: 20px;  */
 }
-
-/* #addSearch {
-
-} */
-
 
 /****************************** 
 ANIMATIONS
