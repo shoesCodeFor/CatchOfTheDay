@@ -1,0 +1,171 @@
+/****************************** 
+GENERAL
+******************************/
+body {
+    background: url(../images/ocean.jpg), #428bca;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 180%;
+    background-blend-mode: multiply;
+}
+
+a {
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/****************************** 
+LOGO
+******************************/
+#logo {
+    background: url(../images/lake.jpeg);
+    height: 500px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-position: center;
+    border: white solid 3px;
+    margin-top: 7%;
+    -webkit-animation: zoom-in-out 2s ease-in 0s 1 normal ;
+    animation: zoom-in-out 2s ease-in 0s 1 normal ;
+}
+
+#logo > h1 {
+    font-family: 'Fjalla One', sans-serif;
+    margin: 45px 0;
+    line-height: .8;
+    color: white;
+    font-size: 80px;
+    text-align: right;
+    direction:rtl;
+    text-shadow: 2px 2px grey;
+    text-indent: 280px;
+} 
+
+#logo > h1:nth-child(3) {
+    direction: rtl;
+    text-indent: 230px;
+}
+
+#logo > h1:nth-child(4) {
+    text-indent: 180px;
+}
+
+/****************************** 
+NAV
+******************************/
+
+nav {
+    position: relative;
+    /* border-top: white solid 3px;
+    border-left: white solid 3px;
+    border-right: white solid 3px; */
+    margin-left: -18px; 
+    margin-top: -3px;
+    overflow: auto;
+    height: 25px; 
+}
+li{
+    display: inline;
+    font-size: 15px;
+}
+
+li > a{
+    color:428bca;
+    background: white;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+/****************************** 
+SEARCH
+******************************/
+#search {
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    display: inline-block;
+}
+
+/****************************** 
+ANIMATIONS
+******************************/
+.fadeIn{    
+    animation-name:fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
+    animation-timing-function: ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+.slideLeft{
+	animation-name: slideLeft;
+	-webkit-animation-name: slideLeft;	
+
+	animation-duration: 1.5s;	
+    -webkit-animation-duration: 1.5s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+ 
+    opacity: 0;
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideLeft {
+    from {
+        opacity: 0;
+		-webkit-transform: translateX(100%);
+	}
+	
+	to {
+        opacity: 1;
+		-webkit-transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes zoom-in-out {
+    0%{
+      -webkit-transform: scale(.8);
+      transform: scale(.8);
+    }
+    100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes zoom-in-out {
+    0%{
+      -ms-transform: scale(.8);
+      transform: scale(.8);
+    }
+    100%{
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  }
