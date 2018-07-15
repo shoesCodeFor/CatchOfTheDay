@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catch of the Day - Admin Panel</title>
+
+    <!--Bootstrap 4 includes-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+</head>
+<body>
+    <nav class="navbar custo-nav justify-content-center">
+        <a class="navbar-brand">
+            Catch of the Day Admin <i class="fas fa-fish fa-2x"></i>
+        </a>
+    </nav>
+    <div class="container component">
+        <div class="row">
+            <div class="col-12 text-center">
+                <table class="table">
+                    <thead class="thead-dark justify-content-center">
+                    <tr>
+                        <h3>Nutrition by Fish Type</h3>
+                        <!-- https://www.fda.gov/downloads/Food/GuidanceRegulation/ucm063478.pdf -->
+                    </tr>
+                    <tr>
+                        <th scope="col">Fish Name</th>
+                        <th scope="col">Calories</th>
+                        <th scope="col">Calories from Fat</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                        <th scope="col">Edit?</th>
+                    </tr>
+                    </thead>
+                    <tbody id="trains">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container component">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Add a Train</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form id="fishNutes" onsubmit="return false;">
+                    <!--Fish Name-->
+                    <div class="form-group">
+                        <label for="fishName">Fish Name</label>
+                        <input type="text" class="form-control" id="fishName" aria-describedby="fishNameHelp" placeholder="Enter the name of the fish">
+                        <small id="fishNameHelp" class="form-text text-muted">Bluegill</small>
+                    </div>
+                    <!--Calories -->
+                    <div class="form-group">
+                        <label for="fishCals">Calories</label>
+                        <input type="number" class="form-control" id="fishCals" placeholder="200 (for 3oz Serving)">
+                    </div>
+                    <!--Calories from fat -->
+                    <div class="form-group">
+                        <label for="fishCalsFromFat">Calories</label>
+                        <input type="number" class="form-control" id="fishCalsFromFat" placeholder="10">
+                    </div>
+                    <!--First Time-->
+                    <div class="form-group">
+                        <label for="datetimepicker">Starting Time</label>
+                        <div class="input-group date" id="datetimepicker" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" id="trainStart"/>
+                            <div class="input-group-append" data-target="#datetimepicker" data-toggle="datetimepicker" aria-describedby="startTimeHelp" placeholder="Enter the time in 24hr format">
+                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                            </div>
+                        </div>
+                        <small id="startTimeHelp" class="form-text text-muted">Ex: 11:30PM should be entered as 23:30</small>
+                    </div>
+
+                    <!--Frequency-->
+                    <div class="form-group">
+                        <label for="trainFrequency">Train Frequency</label>
+                        <input type="number" class="form-control" id="trainFrequency" placeholder="Frequency in Minutes">
+                        <small id="trainFrequencyDesc" class="form-text text-muted">Ex: 30 (minutes)</small>
+                    </div>
+
+                    <button onclick="formSubmit()" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <!--Bootstrap 4 JS Items and Jquery-->
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/moment.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker').datetimepicker({
+                    format: 'HH:mm'
+                });
+            });
+        </script>
+        <script>
+            // Initialize Firebas
+            var config = {
+                apiKey: "AIzaSyCzwfH6lnSFuIKtXSONA-4tzPQMZo1qwr8",
+                authDomain: "catchoftheday-498d0.firebaseapp.com",
+                databaseURL: "https://catchoftheday-498d0.firebaseio.com",
+                projectId: "catchoftheday-498d0",
+                storageBucket: "catchoftheday-498d0.appspot.com",
+                messagingSenderId: "400273781822"
+            };
+            
+            firebase.initializeApp(config);
+            // Init the DB
+            var database = firebase.database();
+            var dbState;
+            var oldKeys = [];
+
+            // Get data from DB
+            database.ref().on("value", function(snapshot) {
+                // Set the state to a var
+                dbState = snapshot.val();
+                console.log(dbState);
+
+                // Lets get some keys
+                let keys = Object.keys(dbState);
+
+
+                console.log(keys);
+                if(!newData(keys, oldKeys)){
+                    console.log('We got new data');
+                    fillTable(keys, dbState);
+                }
+                oldKeys = Object.keys(dbState);
+                // Change the HTML using jQuery to reflect the updated clickCounter value
+                // $("#click-value").text(snapshot.val().clickCount);
+                // Alternate solution to the above line
+                // $("#click-value").html(clickCounter);
+
+                // If any errors are experienced, log them to console.
+            }, function(errorObject) {
+                console.log("The read failed: " + errorObject.code);
+            });
+            function updateData(){
+                // Get data from DB
+                database.ref().on("value", function(snapshot) {
+                    // Set the state to a var
+                    dbState = snapshot.val();
+                    console.log(dbState);
+
+                    // Lets get some keys
+                    let keys = Object.keys(dbState);
+
+
+                    console.log(keys);
+                    if(!newData(keys, oldKeys)){
+                        console.log('We got new data');
+                        fillTable(keys, dbState);
+                    }
+                    oldKeys = Object.keys(dbState);
+                    // Change the HTML using jQuery to reflect the updated clickCounter value
+                    // $("#click-value").text(snapshot.val().clickCount);
+                    // Alternate solution to the above line
+                    // $("#click-value").html(clickCounter);
+
+                    // If any errors are experienced, log them to console.
+                }, function(errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                });
+            }
+            // setInterval(function () {
+            //     updateData();
+            // }, 15000);
+
+            function fillTable(keyArr, state){
+                console.log('Filling the table...')
+                let table = $('#trains');
+                table.empty();
+                for(let i = 0; i < keyArr.length; i++){
+                    console.log(state[keyArr[i]]);
+                    let row = state[keyArr[i]];
+                    let aTrain = new Train(keyArr[i], row.name, row.dest, row.startTime, row.interval);
+                    let rowHTML = `
+                        <tr id="${keyArr[i]}">
+                        <th scope="row">${aTrain.name}</th>
+                        <td>${aTrain.destination}</td>
+                        <td>${aTrain.tInterval}</td>
+                        <td>${moment(aTrain.nextStop, "HH:mm").format("HH:mm A")}</td>
+                        <td>${aTrain.waitMins}</td>
+                        <td><i class="far fa-trash-alt" onclick="deleteTrain('${keyArr[i]}')"></i></td>
+                        </tr>
+                    `;
+                    table.append(rowHTML);
+                    // <th scope="col">Train Name</th>
+                    // <th scope="col">Destination</th>
+                    //     <th scope="col">Frequency(min)</th>
+                    //     <th scope="col">Next Arrival</th>
+                    // <th scope="col">Minutes Away</th>
+                    // <th scope="col">Edit?</th>
+                }
+            }
+
+
+            function newData(arr1, arr2){
+                let theBiggerOne = arr1.length;
+                if(arr2.length > theBiggerOne){
+                    theBiggerOne = arr2.length;
+                }
+                for(let i = 0; i < theBiggerOne; i++){
+                    if(arr1[i] !== arr2[i]){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function deleteTrain(id){
+                console.log(id);
+                $('#' + id).remove();
+                database.ref(id).remove();
+            }
+
+            function formSubmit(){
+                let name = $('#fishName').val();
+                let calories = $('#fishCals').val();
+                let calsFromFat = $('#fishCalsFromFat').val();
+                let start = $('#trainStart').val();
+                let freq = $('#trainFrequency').val();
+                console.log("Name: " + name + 'Cal:' + calories + calsFromFat + freq);
+                postToDB(name, calories, calsFromFat, freq);
+                document.getElementById("fishNutes").reset();
+            }
+
+            function postToDB(_name, _dest, _start, _freq){
+                // Code for handling the push
+                database.ref().push({
+                    name: _name,
+                    dest: _dest,
+                    startTime: _start,
+                    interval: _freq,
+                    shown: true,
+                    dateAdded: firebase.database.ServerValue.TIMESTAMP
+                });
+            }
+            // postToDB();
+
+        </script>
+
+    </footer>
+
+</body>
+</html>

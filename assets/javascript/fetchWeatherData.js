@@ -2,6 +2,7 @@ var fetch = require("node-fetch");
 
 function getWeatherByCoords(lat, lng){
     /*
+    From weather underground......
     $.ajax({
         url : "http://api.wunderground.com/api/0fe12907df8cbe98/geolookup/conditions/q/IA/Cedar_Rapids.json",
         dataType : "jsonp",
@@ -21,10 +22,11 @@ function getWeatherByCoords(lat, lng){
               // Print to the page
               console.log(data);
               weatherResponse = `
-                <h2>${data.current_observation.temperature_string}</h2>
+                <h3>${data.current_observation.temperature_string}</h3>
                 <img src=\"${weatherIcon(data.current_observation.temp_f, 
                     data.current_observation.local_time_rfc822, data.current_observation.weather)}\">
               `;
+              // This is what we'll jQuery into the DOM
               console.log(weatherResponse);
         });
     return weatherResponse;     
