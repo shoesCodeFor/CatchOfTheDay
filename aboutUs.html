@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="assets/css/contactus.css"> 
-<style>
-</style>
-  </head>
-  <body>
-    <div class="header">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/aboutus.css" />
+</head>
+<div class= "header">
+  <div class="navbar">
+    <ul>
+      <a href="index.html"><li>Home</li></a>
+      <a href="contactUs.html"><li>Contact</li></a>
+      <li>About Us</li>
+    </ul>
   </div>
-  <div id="logo">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/1500x250"></a>
-   </div>
-   <div id="logo">
-        <img src="logo.png" alt="">
-   </div>
+</div>
 
-  <div id="navbar">
-    <a class="active" href="index.html">Home</a>
-    <a href="CatchOfTheDay/">Contact</a>  
-  
-  <script>
-  window.onscroll = function() {myFunction()};
-  
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;
-  
-  function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-</script>
+<body>
+ <div class="team-section">
+  <h1>The Team</h1>
+  <span class="border"></span>
+  <div class="ps">
+    <a href="#p1"><img src="assets/images/Shoe.jpg" alt="shoe"></a>
+    <a href="#p2"><img src="assets/images/pic.jpg" alt="cesar"></a>
+    <a href="#p3"><img src="assets/images/hippo.jpg" alt="hippo"></a>
+  </div>
 
+  <div class="section" id="p1">
+    <span class="name">Schuyler</span>
+    <span class="boarder"></span>
+    <p>
+      Backend Leading Developer
+    </p>
+  </div>
+
+  <div class="section" id="p2">
+      <span class="name">Cesar</span>
+      <span class="boarder"></span>
+      <p>
+        Project Manager
+      </p>
+    </div>
+
+    <div class="section" id="p3">
+        <span class="name">Mayra</span>
+        <span class="boarder"></span>
+        <p>
+          Frontend Leading Developer
+        </p>
+      </div>
+  
 </body>
 </html>

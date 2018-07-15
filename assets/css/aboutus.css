@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.navbar{
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    top: 0px;
+    position: fixed;
+    top: 0px;
+    text-align: center;
+    transition: .5s;
+}
+    .navbar ul li{
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 50px;
+        color:rosybrown;
+        font-size: 24px;
+        font-family: sans-serif;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: .5s;
+    }
+    /* .navbar ul li:hover{
+        background: orchid;
+    } */
+body{
+    background-image: url("../images/ocean.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.team-section{
+    overflow: hidden;
+    text-align: center;
+    padding: 60px;
+}
+.team-section h1{
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    color: rosybrown;
+    font-size: 40px
+}
+.border{
+    display: block;
+    margin: auto;
+    width: 160px;
+    height: 3px;
+    margin-bottom: 40px;
+}
+.ps{
+    margin-bottom: 40px;
+}
+.ps a{
+    display: inline-block;
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.ps a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4s all;
+}
+.ps a:hover > img{
+    filter: none;
+}
+.section{
+    width: 600px;
+    margin: auto;
+    font-size: 20px;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+}
+.section:target{
+    height: auto;
+}
+.name{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: rosybrown;
+}
+#p1 {
+    text-align: center;
+    color: rosybrown;
+}
+#p2 {
+    text-align: center;
+    color: rosybrown;
+}
+#p3 {
+    text-align: center;
+    color: rosybrown;
+}
