@@ -16,35 +16,42 @@
             Catch of the Day Admin <i class="fas fa-fish fa-2x"></i>
         </a>
     </nav>
-    <div class="container component">
-        <div class="row">
-            <div class="col-12 text-center">
+
+            <div class="text-center">
                 <table class="table">
                     <thead class="thead-dark justify-content-center">
                     <tr>
                         <h3>Nutrition by Fish Type</h3>
                         <!-- https://www.fda.gov/downloads/Food/GuidanceRegulation/ucm063478.pdf -->
                     </tr>
-                    <tr>
+                    <tr id="tableHeader">
                         <th scope="col">Fish Name</th>
                         <th scope="col">Calories</th>
                         <th scope="col">Calories from Fat</th>
-                        <th scope="col">Next Arrival</th>
-                        <th scope="col">Minutes Away</th>
-                        <th scope="col">Edit?</th>
+                        <th scope="col">Total Fat</th>
+                        <th scope="col">Saturated Fat</th>
+                        <th scope="col">Cholesterol</th>
+                        <th scope="col">Sodium</th>
+                        <th scope="col">Potassium</th>
+                        <th scope="col">Total Carbs</th>
+                        <th scope="col">Protein</th>
+                        <th scope="col">Vitamin A</th>
+                        <th scope="col">Vitamin C</th>
+                        <th scope="col">Calcium</th>
+                        <th scope="col">Iron</th>
+                        <th scope="col">Active</th>
+
                     </tr>
                     </thead>
-                    <tbody id="trains">
+                    <tbody id="nutrition">
 
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
     <div class="container component">
         <div class="row">
             <div class="col-12 text-center">
-                <h3>Add a Train</h3>
+                <h3>Add a fish's nutritional value</h3>
             </div>
         </div>
         <div class="row">
@@ -63,27 +70,65 @@
                     </div>
                     <!--Calories from fat -->
                     <div class="form-group">
-                        <label for="fishCalsFromFat">Calories</label>
+                        <label for="fishCalsFromFat">Calories from Fat</label>
                         <input type="number" class="form-control" id="fishCalsFromFat" placeholder="10">
                     </div>
-                    <!--First Time-->
+                    <!--Total fat -->
                     <div class="form-group">
-                        <label for="datetimepicker">Starting Time</label>
-                        <div class="input-group date" id="datetimepicker" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" id="trainStart"/>
-                            <div class="input-group-append" data-target="#datetimepicker" data-toggle="datetimepicker" aria-describedby="startTimeHelp" placeholder="Enter the time in 24hr format">
-                                <div class="input-group-text"><i class="far fa-clock"></i></div>
-                            </div>
-                        </div>
-                        <small id="startTimeHelp" class="form-text text-muted">Ex: 11:30PM should be entered as 23:30</small>
+                        <label for="fishFat">Total Fat (grams)</label>
+                        <input type="number" class="form-control" id="fishFat" placeholder="1">
+                    </div>
+                    <!--Saturated fat -->
+                    <div class="form-group">
+                        <label for="fishSatFat">Saturated Fat (grams)</label>
+                        <input type="number" class="form-control" id="fishSatFat" placeholder="0.5">
+                    </div>
+                    <!--Cholesterol-->
+                    <div class="form-group">
+                        <label for="fishCholesterol">Cholesterol (mg)</label>
+                        <input type="number" class="form-control" id="fishCholesterol" placeholder="75">
+                    </div>
+                    <!--Sodium-->
+                    <div class="form-group">
+                        <label for="fishSodium">Sodium (mg)</label>
+                        <input type="number" class="form-control" id="fishSodium" placeholder="90">
+                    </div>
+                    <!--Potassium-->
+                    <div class="form-group">
+                        <label for="fishPotassium">Potassium (mg)</label>
+                        <input type="number" class="form-control" id="fishPotassium" placeholder="50">
+                    </div>
+                    <!--Total Carbs-->
+                    <div class="form-group">
+                        <label for="fishCarbs">Total Carbs (g)</label>
+                        <input type="number" class="form-control" id="fishCarbs" placeholder="10">
+                    </div>
+                    <!--Protein-->
+                    <div class="form-group">
+                        <label for="fishProtein">Protein (g)</label>
+                        <input type="number" class="form-control" id="fishProtein" placeholder="10">
+                    </div>
+                    <!--Vitamin A-->
+                    <div class="form-group">
+                        <label for="fishVitA">Vitamin A (RDA %)</label>
+                        <input type="number" class="form-control" id="fishVitA" placeholder="10">
+                    </div>
+                    <!--Vitamin C-->
+                    <div class="form-group">
+                        <label for="fishVitC">Vitamin C (RDA %)</label>
+                        <input type="number" class="form-control" id="fishVitC" placeholder="10">
+                    </div>
+                    <!--Calcium-->
+                    <div class="form-group">
+                        <label for="fishCalcium">Calcium(RDA %)</label>
+                        <input type="number" class="form-control" id="fishCalcium" placeholder="10">
+                    </div>
+                    <!--Iron-->
+                    <div class="form-group">
+                        <label for="fishIron">Iron (RDA %)</label>
+                        <input type="number" class="form-control" id="fishIron" placeholder="10">
                     </div>
 
-                    <!--Frequency-->
-                    <div class="form-group">
-                        <label for="trainFrequency">Train Frequency</label>
-                        <input type="number" class="form-control" id="trainFrequency" placeholder="Frequency in Minutes">
-                        <small id="trainFrequencyDesc" class="form-text text-muted">Ex: 30 (minutes)</small>
-                    </div>
 
                     <button onclick="formSubmit()" type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -103,159 +148,7 @@
         <script type="text/javascript" src="assets/js/moment.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
         <script src="assets/js/app.js"></script>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker').datetimepicker({
-                    format: 'HH:mm'
-                });
-            });
-        </script>
-        <script>
-            // Initialize Firebas
-            var config = {
-                apiKey: "AIzaSyCzwfH6lnSFuIKtXSONA-4tzPQMZo1qwr8",
-                authDomain: "catchoftheday-498d0.firebaseapp.com",
-                databaseURL: "https://catchoftheday-498d0.firebaseio.com",
-                projectId: "catchoftheday-498d0",
-                storageBucket: "catchoftheday-498d0.appspot.com",
-                messagingSenderId: "400273781822"
-            };
-            
-            firebase.initializeApp(config);
-            // Init the DB
-            var database = firebase.database();
-            var dbState;
-            var oldKeys = [];
 
-            // Get data from DB
-            database.ref().on("value", function(snapshot) {
-                // Set the state to a var
-                dbState = snapshot.val();
-                console.log(dbState);
-
-                // Lets get some keys
-                let keys = Object.keys(dbState);
-
-
-                console.log(keys);
-                if(!newData(keys, oldKeys)){
-                    console.log('We got new data');
-                    fillTable(keys, dbState);
-                }
-                oldKeys = Object.keys(dbState);
-                // Change the HTML using jQuery to reflect the updated clickCounter value
-                // $("#click-value").text(snapshot.val().clickCount);
-                // Alternate solution to the above line
-                // $("#click-value").html(clickCounter);
-
-                // If any errors are experienced, log them to console.
-            }, function(errorObject) {
-                console.log("The read failed: " + errorObject.code);
-            });
-            function updateData(){
-                // Get data from DB
-                database.ref().on("value", function(snapshot) {
-                    // Set the state to a var
-                    dbState = snapshot.val();
-                    console.log(dbState);
-
-                    // Lets get some keys
-                    let keys = Object.keys(dbState);
-
-
-                    console.log(keys);
-                    if(!newData(keys, oldKeys)){
-                        console.log('We got new data');
-                        fillTable(keys, dbState);
-                    }
-                    oldKeys = Object.keys(dbState);
-                    // Change the HTML using jQuery to reflect the updated clickCounter value
-                    // $("#click-value").text(snapshot.val().clickCount);
-                    // Alternate solution to the above line
-                    // $("#click-value").html(clickCounter);
-
-                    // If any errors are experienced, log them to console.
-                }, function(errorObject) {
-                    console.log("The read failed: " + errorObject.code);
-                });
-            }
-            // setInterval(function () {
-            //     updateData();
-            // }, 15000);
-
-            function fillTable(keyArr, state){
-                console.log('Filling the table...')
-                let table = $('#trains');
-                table.empty();
-                for(let i = 0; i < keyArr.length; i++){
-                    console.log(state[keyArr[i]]);
-                    let row = state[keyArr[i]];
-                    let aTrain = new Train(keyArr[i], row.name, row.dest, row.startTime, row.interval);
-                    let rowHTML = `
-                        <tr id="${keyArr[i]}">
-                        <th scope="row">${aTrain.name}</th>
-                        <td>${aTrain.destination}</td>
-                        <td>${aTrain.tInterval}</td>
-                        <td>${moment(aTrain.nextStop, "HH:mm").format("HH:mm A")}</td>
-                        <td>${aTrain.waitMins}</td>
-                        <td><i class="far fa-trash-alt" onclick="deleteTrain('${keyArr[i]}')"></i></td>
-                        </tr>
-                    `;
-                    table.append(rowHTML);
-                    // <th scope="col">Train Name</th>
-                    // <th scope="col">Destination</th>
-                    //     <th scope="col">Frequency(min)</th>
-                    //     <th scope="col">Next Arrival</th>
-                    // <th scope="col">Minutes Away</th>
-                    // <th scope="col">Edit?</th>
-                }
-            }
-
-
-            function newData(arr1, arr2){
-                let theBiggerOne = arr1.length;
-                if(arr2.length > theBiggerOne){
-                    theBiggerOne = arr2.length;
-                }
-                for(let i = 0; i < theBiggerOne; i++){
-                    if(arr1[i] !== arr2[i]){
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            function deleteTrain(id){
-                console.log(id);
-                $('#' + id).remove();
-                database.ref(id).remove();
-            }
-
-            function formSubmit(){
-                let name = $('#fishName').val();
-                let calories = $('#fishCals').val();
-                let calsFromFat = $('#fishCalsFromFat').val();
-                let start = $('#trainStart').val();
-                let freq = $('#trainFrequency').val();
-                console.log("Name: " + name + 'Cal:' + calories + calsFromFat + freq);
-                postToDB(name, calories, calsFromFat, freq);
-                document.getElementById("fishNutes").reset();
-            }
-
-            function postToDB(_name, _dest, _start, _freq){
-                // Code for handling the push
-                database.ref().push({
-                    name: _name,
-                    dest: _dest,
-                    startTime: _start,
-                    interval: _freq,
-                    shown: true,
-                    dateAdded: firebase.database.ServerValue.TIMESTAMP
-                });
-            }
-            // postToDB();
-
-        </script>
 
     </footer>
 
