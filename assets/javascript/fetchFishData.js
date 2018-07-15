@@ -9,6 +9,7 @@ var fishingSpots = L.featureGroup();
                 
 
 function getData(URL){
+    fishGroup = [];
     fetch(URL)
         .then(function(response) {
             return response.json();
