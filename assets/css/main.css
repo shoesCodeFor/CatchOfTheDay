@@ -24,6 +24,13 @@ LOGO
     animation: zoom-in-out 2s ease-in 0s 1 normal ;
 }
 
+img {
+    position: absolute;
+    bottom: 120px;
+    right: 500px;
+    height: 300px;
+
+}
 #background{
     background: url(../images/lake.jpeg);
     height: 500px;
@@ -42,16 +49,23 @@ LOGO
     text-align: right;
     direction:rtl;
     text-shadow: 2px 2px grey;
-    text-indent: 280px;
+    text-indent: 210px;
+    /* text-indent: 280px; 
+    before pic  */
 } 
 
 #logo > h1:nth-child(3) {
     direction: rtl;
-    text-indent: 230px;
+    text-indent: 210px;
+    /* text-indent: 230px; 
+    before pic  */
 }
 
-#logo > h1:nth-child(4) {
-    text-indent: 180px;
+#logo > h1:nth-child(5) {
+    direction: rtl;
+    text-indent: 210px;
+    /* text-indent: 180px; 
+    before pic  */
 }
 
 /****************************** 
