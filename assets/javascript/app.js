@@ -1,5 +1,5 @@
 // Add TypeAhead plugin for Bootstrap 4
-
+var typeOfFish;
 var $input = $(".typeahead");
 $input.typeahead({
     source: [
@@ -32,6 +32,8 @@ $input.change(function() {
 });
 
 $('#addSearch').on('click', function (){
+    typeOfFish = $('#searchInput').val();
+    console.log('Searching for ' + typeOfFish);
     $('#intro-section').fadeOut();
     $('#searchResultPage').fadeIn();
     $('#popup-nav').fadeIn();
@@ -51,7 +53,7 @@ $('#addSearch').on('click', function (){
                 let bottomLeft = [bounds._southWest.lat, bounds._southWest.lng]
                 console.log(topRight);
                 console.log(bottomLeft);
-                findFishBB(topRight, bottomLeft);
+                findFishBB(topRight, bottomLeft, typeOfFish);
             })();
             map.on('zoom', function(e){
                 console.log('Zoom changed');
@@ -62,7 +64,7 @@ $('#addSearch').on('click', function (){
                 let bottomLeft = [bounds._southWest.lat, bounds._southWest.lng]
                 console.log(topRight);
                 console.log(bottomLeft);
-                findFishBB(topRight, bottomLeft);
+                findFishBB(topRight, bottomLeft, typeOfFish);
 
             });
             map.addControl(L.mapquest.control());
