@@ -4,6 +4,9 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.logo{
+margin-top: -60px;
+}
 .navbar{
     width: 100%;
     padding: 20px;
@@ -106,4 +109,7 @@ body{
 #p3 {
     text-align: center;
     color: rosybrown;
+}
+.header img{
+    float: left;
 }
