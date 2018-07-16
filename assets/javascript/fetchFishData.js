@@ -22,10 +22,10 @@ function getData(URL){
             APIData.forEach(element => {
                 console.log(element);
                 L.marker([element.latitude, element.longitude])
-                    .bindPopup('<div><a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'
+                    .bindPopup('<div id="area_id' + element.area_id +'"><a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'
                         + element.may_catch +'</h4><h4>'+ element.mc2 +'</h4>' +
                         '<button class="btn btn-success" onclick="getDirections(\'' +
-                        element.latitude.toString() +',' + element.longitude.toString() + '\')">Get Directions</button></div>'
+                        element.latitude.toString() +',' + element.longitude.toString() + '\')">Get Directions</button></div>' + $("<div>").html()
                 ).addTo(fishingSpots);
                 let spot;
                 fishGroup.push(element.may_catch);
