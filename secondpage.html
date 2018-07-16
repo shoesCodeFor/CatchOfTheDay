@@ -7,89 +7,75 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- Linking CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/page2.css">
-  <!-- Linking Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab|Yellowtail' rel='stylesheet' type='text/css'>
-  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <!-- Linking Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab|Yellowtail' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
 </head>
 <body>
+    <div class="container" id="searchResultPage">
 
-<div class="container">
+        <div class="jumbotron bg-primary text-center">
+            <h1 id="searchedFish">HIPPO FISH</h1>
+        </div>
 
-	<div class="jumbotron bg-primary text-center">
-		<h1>HIPPO FISH</h1>
-	</div>
+        <div class="row">
 
-	<div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Where to find</div>
+                    <div>
+                        <div id="map" style="position: relative; width: 100%; height: 500px;"></div>
 
-		<div class="col-md-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Where to find</div>
-				<!-- <div class="panel-body"> -->
-					<!-- <p>
-                        What ever fish they decided to look for info
-                    </p> 
-					<p>
-                        nutritional value
-                    </p> -->
-                <div>
-                    <div id="map" style="position: relative; width: 100%; height: 500px;"></div>
-                    
-				        </div>
-			</div>
-		</div>
-
-		<div class="col-md-6" id="infoCard">
-			<div class="well text-center">
-				<div>
-            
-					<img class="img-responsive" src="http://i.imgur.com/5ULzX8y.jpg">
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<br><br>
-
-	<div class="row text-center" id="nutritionTable">
-        
-
-            <h2>Nutritional Value</h2>            
-            <table style="width:100%">
-              <tr>
-                <th>Calories</th>
-                <th>Fat</th> 
-                <th>Vitamins</th>
-              </tr>
-              <tr>
-                <td>350</td>
-                <td>10g</td>
-                <td>b12</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>D</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>B6</td>
-              </tr>
-            </table>
-			
+                            </div>
                 </div>
-                <br><br>
+            </div>
+
+            <div class="col-md-6" id="infoCard">
+                <div class="well text-center">
+                    <div>
+
+                        <img class="img-responsive" src="http://i.imgur.com/5ULzX8y.jpg">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br><br>
+
+            <div class="row text-center" id="nutritionTable">
+                    <h2>Nutritional Value</h2>
+                    <table style="width:100%">
+                      <tr>
+                        <th>Calories</th>
+                        <th>Fat</th>
+                        <th>Vitamins</th>
+                      </tr>
+                      <tr>
+                        <td>350</td>
+                        <td>10g</td>
+                        <td>b12</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>D</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>B6</td>
+                      </tr>
+                    </table>
+            </div>
+            <br><br>
+            <div class="row">
                 <h3 class="text-center">Information</h3>
                 <p>Hippos are awesome Hippos Are cute. "What's mine is mine and mine mine and not yours. </p>
-			</div>
-		</div>
+            </div>
+    </div>
 
-	</div>
-
-</div>
-</div>
 <footer>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
