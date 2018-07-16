@@ -1,5 +1,5 @@
 // Add TypeAhead plugin for Bootstrap 4
-var typeOfFish;
+var typeOfFish = '';
 var $input = $(".typeahead");
 $input.typeahead({
     source: [
@@ -33,6 +33,10 @@ $input.change(function() {
 
 $('#addSearch').on('click', function (){
     typeOfFish = $('#searchInput').val();
+    searchForFish();
+});
+
+function searchForFish(){
     console.log('Searching for ' + typeOfFish);
     $('#intro-section').fadeOut();
     $('#searchResultPage').fadeIn();
@@ -69,4 +73,4 @@ $('#addSearch').on('click', function (){
             });
             map.addControl(L.mapquest.control());
     }, 1000);
-});
+}
