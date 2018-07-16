@@ -9,6 +9,7 @@ var fishingSpots = L.featureGroup();
                 
 
 function getData(URL){
+    console.log('Within the getData API call' + typeOfFish);
     fishGroup = [];
     fetch(URL)
         .then(function(response) {
@@ -21,6 +22,7 @@ function getData(URL){
             console.log('.........');
             APIData.forEach(element => {
                 console.log(element);
+                if(element.may_catch.includes(typeOfFish) || element.mc2.includes(typeOfFish) || element.mc3.includes(typeOfFish))
                 L.marker([element.latitude, element.longitude])
                     .bindPopup('<div id="area_id' + element.area_id +'"><a target="_blank" href="' + element.area_link + '"><h3>'+ element.area_name + '</h3></a><h4>'
                         + element.may_catch +'</h4><h4>'+ element.mc2 +'</h4>' +
@@ -39,7 +41,7 @@ function getData(URL){
 /**
  * This will create a fish query based on a bounding box.
  */
-function findFishBB(topRight, bottomLeft){
+function findFishBB(topRight, bottomLeft, typeOfFish){
     let latRange = [topRight[0], bottomLeft[0]];
     let lngRange = [topRight[1], bottomLeft[1]];
     let baseURL = 'https://data.ct.gov/resource/mty4-w9bf.json?$query=Select%20*%20WHERE%20'
