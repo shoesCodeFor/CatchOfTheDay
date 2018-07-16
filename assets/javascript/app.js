@@ -29,3 +29,7 @@ $input.change(function() {
         // Nothing is active so it is a new value (or maybe empty value)
     }
 });
+
+$('#addSearch').on('click', function (){
+    $('#intro-section').hide();
+});
