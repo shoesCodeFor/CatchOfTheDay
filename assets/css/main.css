@@ -3,10 +3,11 @@ GENERAL
 ******************************/
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
-    /* background-repeat: no-repeat;*/
-    background-position: center; 
-    background-size: 180%;
+    background-repeat: no-repeat;
+    /*background-position: cover;*/
+    background-size: cover;
     /* background-blend-mode: multiply; */
+    height: 100%;
 }
 /****************************** 
 LOGO
@@ -70,7 +71,7 @@ li{
 }
 
 li > a{
-    color:428bca;
+    color:#428bca;
     background: white;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
@@ -91,6 +92,13 @@ SEARCH
     display: inline-block;
 }
 
+/*********************************
+INDEX
+ *********************************/
+
+#pageBottom{
+    height:500px;
+}
 
 /************************************************************ 
                         CONTACT US
@@ -171,6 +179,8 @@ SEARCH
     top: 0px;
     text-align: center;
     transition: .5s;
+    border-bottom:solid rosybrown;
+    background-color: rgba(255,255,255,0.8);
 }
     .navbar ul li{
         list-style-type: none;
@@ -196,7 +206,9 @@ SEARCH
 .team-section{
     overflow: hidden;
     text-align: center;
+    margin-top: 10vh;
     padding: 60px;
+    margin-bottom: 50vh;
 }
 .team-section h1{
     text-transform: uppercase;
