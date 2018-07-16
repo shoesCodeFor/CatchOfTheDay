@@ -24,12 +24,11 @@ LOGO
     animation: zoom-in-out 2s ease-in 0s 1 normal ;
 }
 
-img {
+#hipLogo {
     position: absolute;
     bottom: 120px;
     right: 500px;
     height: 300px;
-
 }
 #background{
     background: url(../images/lake.jpeg);
