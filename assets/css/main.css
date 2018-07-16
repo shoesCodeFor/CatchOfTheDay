@@ -2,7 +2,7 @@
 GENERAL
 ******************************/
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
+    background: linear-gradient(rgba(200, 250, 250, 0.5), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
     background-repeat: no-repeat;
     /*background-position: cover;*/
     background-size: cover;
@@ -70,7 +70,9 @@ LOGO
 /****************************** 
 NAV
 ******************************/
-
+.navbar{
+    z-index: 1001;
+}
 nav {
     position: relative;
     margin-left: -18px; 
@@ -111,6 +113,12 @@ INDEX
 
 #pageBottom{
     height:500px;
+}
+#mapCard{
+    background-color: #fff;
+}
+#searchResultPage{
+    margin-top: 25vh;
 }
 
 /************************************************************ 
@@ -367,4 +375,57 @@ INDEX
       -ms-transform: scale(1);
       transform: scale(1);
     }
+  }
+/**
+NOT SUPPORTED - LESS CSS FROM Cesars Nutritional label
+*/
+/* .jumbotron {
+	background-color: #428bca
+}
+
+.jumbotron h1 {
+	color:white;
+}
+
+p, h1, h4 {
+	font-family: 'Roboto Slab', serif;
+}
+
+#funText {
+	color: black;
+	font-size: 24px;
+	font-family: 'Roboto Slab', serif;
+}
+
+#box {
+	height: 100px;
+	width: 100px;
+	margin:auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+.image {
+  width: 250px;
+  float: left;
+  margin: 20px;
+  height: 480px;
+}
+
+body {
+  font-size: small;
+  line-height: 1.4;
+}
+p {
+  margin: 0;
+} */
+
+
+  .thick-end {
+    border-bottom: 10px solid black;
+  }
+  .thin-end {
+    border-bottom: 1px solid black;
   }

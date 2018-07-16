@@ -39,8 +39,8 @@ body {
 }
 p {
   margin: 0;
-}
-
+} 
+/*
 .performance-facts {
   border: 1px solid black;
   margin: 20px;
@@ -131,10 +131,7 @@ p {
     }
   }
 }
-
-.text-center {
-  text-align: center;
-}
+*/
 .thick-end {
   border-bottom: 10px solid black;
 }
