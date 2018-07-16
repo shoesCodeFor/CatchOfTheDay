@@ -8,7 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script src="assets/javascript/less.js"></script> 
+    <link rel="stylesheet/less" type="text/css" href="assets/css/styles.less" />
+
     <!-- Linking Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat|Roboto+Slab|Yellowtail" rel="stylesheet" type='text/css'>
   </head>
@@ -33,10 +37,10 @@
             <div class="row">
                 <div class="col-md-2"> </div>
                   <div class="col-md-8">
-                      <form id="search" class="fadeIn">
+                      <form id="search" class="fadeIn" onsubmit="return false;">
                         <input type='text' id='searchInput' placeholder="Go Fish" class="form-control typeahead">
                         <!-- <a href="secondpage.html">SEARCH</a> -->
-                        <input type='submit' id='addSearch' class='btn btn-primary' value="Search" onclick="searchFish()">
+                        <input type='submit' id='addSearch' class='btn btn-primary' value="Search" onclick="">
                       </form>
                   </div>
                 </div>
@@ -47,20 +51,63 @@
       </div>
 
     </div>
+    <div class="header" id="popup-nav">
+      <div class="navbar justify-content-center">
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="contactUs.html"><li>Contact</li></a>
+          <a href="aboutUs.html"><li>About Us</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid" id="searchResultPage">
 
-    <div class="container-fluid">
-      
+      <div class="row">
+          <div class="col-md-6 text-center" id="mapCard">
+            <div class="panel panel-primary">
+              <h3 class="panel-heading">Fish Finder</h3>
+              <div>
+                <div id="map" style="position: relative; width: 100%; height: 480px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="infoCard">
+              <div class="card text-center">
+                  <h3 id="fishName">Fish Name</h3>
+                  <img class="img-responsive" id="fishImage" src="http://i.imgur.com/5ULzX8y.jpg" style="margin-left:25%; width:50%;">
+                  <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
+    <footer>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="assets/javascript/bootstrap3-typeahead.js"></script>
-    <script src="assets/javascript/app.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="assets/javascript/bootstrap3-typeahead.js"></script>
+      <script src="assets/javascript/app.js"></script>
+      <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+      <script src="assets/javascript/fetchFishData.js"></script>
+      <script type="text/javascript">
+        window.onload = function() {
+            $('#searchResultPage').hide();
+            $('#popup-nav').hide();
+            
+        }
+        function makeMarker(response){
+
+        }
+      </script>
+    </footer>
   </body>
 </html>

@@ -1,4 +1,5 @@
 // Add TypeAhead plugin for Bootstrap 4
+
 var $input = $(".typeahead");
 $input.typeahead({
     source: [
@@ -31,5 +32,39 @@ $input.change(function() {
 });
 
 $('#addSearch').on('click', function (){
-    $('#intro-section').hide();
+    $('#intro-section').fadeOut();
+    $('#searchResultPage').fadeIn();
+    $('#popup-nav').fadeIn();
+    setTimeout(function(){
+            
+            L.mapquest.key = 'VXLcMs4sGBfYpLAckWsEQtYsqbvfWcGA';
+            
+            map = L.mapquest.map('map', {
+                center: [41.481350259999999,-72.506571899999997],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 12
+            });
+            (function(){
+                let bounds = map.getBounds();
+                console.log(bounds);
+                let topRight = [bounds._northEast.lat, bounds._northEast.lng];
+                let bottomLeft = [bounds._southWest.lat, bounds._southWest.lng]
+                console.log(topRight);
+                console.log(bottomLeft);
+                findFishBB(topRight, bottomLeft);
+            })();
+            map.on('zoom', function(e){
+                console.log('Zoom changed');
+                console.log(e);
+                let bounds = map.getBounds();
+                console.log(bounds);
+                let topRight = [bounds._northEast.lat, bounds._northEast.lng];
+                let bottomLeft = [bounds._southWest.lat, bounds._southWest.lng]
+                console.log(topRight);
+                console.log(bottomLeft);
+                findFishBB(topRight, bottomLeft);
+
+            });
+            map.addControl(L.mapquest.control());
+    }, 1000);
 });
