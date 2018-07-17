@@ -6,6 +6,7 @@
 }
 .logo{
 margin-top: -60px;
+z-index:1000;    
 }
 .navbar{
     width: 100%;
