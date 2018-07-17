@@ -38,6 +38,7 @@ $('#addSearch').on('click', function (){
 
 function searchForFish(){
     console.log('Searching for ' + typeOfFish);
+    $('#searchResultPage').removeClass('d-none');
     $('#intro-section').fadeOut();
     $('#searchResultPage').fadeIn();
     $('#popup-nav').fadeIn();
