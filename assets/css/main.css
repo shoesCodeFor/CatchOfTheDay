@@ -201,7 +201,7 @@ INDEX
     text-align: center;
     transition: .5s;
     border-bottom:solid rosybrown;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,1);
 }
     .navbar ul li{
         list-style-type: none;

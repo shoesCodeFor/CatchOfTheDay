@@ -12,7 +12,7 @@
   text-align: center;
   transition: .5s;
   border-bottom:solid rosybrown;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,1);
 }
   .navbar ul li{
       list-style-type: none;
@@ -29,7 +29,7 @@
       background: orchid;
   } */
 body{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
+    background: linear-gradient(rgba(100, 142, 165, 0.7), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
