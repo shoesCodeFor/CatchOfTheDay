@@ -1,10 +1,16 @@
 # CatchOfTheDay - A Group Project For DU CodeBootcamp 2018
-An API that will allow the user to be able to see where the fish (as well as the fish image) are located and which type of fish there is. 
+An Single Page APP and API that will allow the user to be able to see where the fish (as well as the fish image) are located and which type of fish there is. 
 
-Using source found on Data.gov and OpenStreetMaps we will direct users to fishing spots near them. 
+Using source found on Data.gov, WeatherUnderground and OpenStreetMaps we will direct users to fishing spots near them. 
 
-Project Kick-Off: July 2nd
-Wrap-Up: July 16th
+Project Kick-Off: July 2nd, 2018
+Wrap-Up and Presentation: July 16th, 2018
+
+### Future Inprovements:
+[] - Move to a separate Org on Github
+[] - Utilize TheCatchOfTheDay.app
+[] - Move API to Heroku
+
 
 ### Table of Contents:
 Website: 
@@ -15,4 +21,4 @@ Wiki: https://github.com/shoesCodeFor/CatchOfTheDay/wiki
 
 Open Issues: https://github.com/shoesCodeFor/CatchOfTheDay/issues
 
-Long-term goals: To move this into a Github Org for continued development and public access.  
+Long-term goals: Continued development and public access.  
