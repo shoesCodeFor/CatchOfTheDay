@@ -1,6 +1,6 @@
-/****************************** 
-GENERAL
-******************************/
+/**************************************************************
+GENERAL - Global Styling, this will be shared accross all pages
+***************************************************************/
 body {
     background: linear-gradient(rgba(100, 142, 165, 0.7), rgba(0, 0, 0, 0.5)),url(../images/ocean.jpg);
     background-repeat: no-repeat;
@@ -9,9 +9,61 @@ body {
     /* background-blend-mode: multiply; */
     height: 100%;
 }
+/**** NAV - Global styling fo the nav bars ****/
+.navbar{
+    z-index: 1001;
+}
+nav {
+    position: relative;
+    margin-left: -18px; 
+    margin-top: -3px;
+    overflow: auto;
+    height: 25px; 
+}
+li{
+    display: inline;
+    font-size: 15px;
+}
+
+li > a{
+    color:#428bca;
+    background: white;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+/*********************************
+INDEX
+ *********************************/
+
+ #pageBottom{
+    height:500px;
+}
+#mapCard{
+    background-color: #fff;
+}
+#searchResultPage{
+    margin-top: 25vh;
+}
+#nutritionFact{
+    background-color: #fff;
+}
 /****************************** 
-LOGO
+SEARCH
 ******************************/
+#search {
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    display: inline-block;
+}
+/******************************************** 
+LOGO - This is the main Div on the index page
+*********************************************/
 #logo {
     background: url(../images/lake.jpeg);
     height: 500px;
@@ -65,63 +117,6 @@ LOGO
     text-indent: 210px;
     /* text-indent: 180px; 
     before pic  */
-}
-
-/****************************** 
-NAV
-******************************/
-.navbar{
-    z-index: 1001;
-}
-nav {
-    position: relative;
-    margin-left: -18px; 
-    margin-top: -3px;
-    overflow: auto;
-    height: 25px; 
-}
-li{
-    display: inline;
-    font-size: 15px;
-}
-
-li > a{
-    color:#428bca;
-    background: white;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    background: white;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-/****************************** 
-SEARCH
-******************************/
-#search {
-    text-align: center;
-}
-
-#searchInput {
-    width: 80%;
-    display: inline-block;
-}
-
-/*********************************
-INDEX
- *********************************/
-
-#pageBottom{
-    height:500px;
-}
-#mapCard{
-    background-color: #fff;
-}
-#searchResultPage{
-    margin-top: 25vh;
-}
-#nutritionFact{
-    background-color: #fff;
 }
 
 /************************************************************ 
@@ -378,57 +373,4 @@ INDEX
       -ms-transform: scale(1);
       transform: scale(1);
     }
-  }
-/**
-NOT SUPPORTED - LESS CSS FROM Cesars Nutritional label
-*/
-/* .jumbotron {
-	background-color: #428bca
 }
-
-.jumbotron h1 {
-	color:white;
-}
-
-p, h1, h4 {
-	font-family: 'Roboto Slab', serif;
-}
-
-#funText {
-	color: black;
-	font-size: 24px;
-	font-family: 'Roboto Slab', serif;
-}
-
-#box {
-	height: 100px;
-	width: 100px;
-	margin:auto;
-}
-
-h3 {
-    text-align: center;
-}
-
-.image {
-  width: 250px;
-  float: left;
-  margin: 20px;
-  height: 480px;
-}
-
-body {
-  font-size: small;
-  line-height: 1.4;
-}
-p {
-  margin: 0;
-} */
-
-
-  .thick-end {
-    border-bottom: 10px solid black;
-  }
-  .thin-end {
-    border-bottom: 1px solid black;
-  }
